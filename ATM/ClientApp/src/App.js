@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import { Menu } from './components/Menu';
 import { Pin } from './components/Pin';
 
 
@@ -16,8 +16,8 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route exact path='/pin' component={Pin} />
-        <Route path='/counter' component={Counter} />
+        <Route path='/pin' component={Pin} />
+        <Route path='/counter' component={Menu} />
         <Route path='/fetch-data' component={FetchData} />
       </Layout>
     );
