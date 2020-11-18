@@ -30,12 +30,11 @@ namespace ATM.Controllers
             var card = _cardDAL.Get(c => c.Number == cardNumber).FirstOrDefault();
             if (card != null && !card.IsLoked)
             {
+                if (card.IsLoked)
+                    return Conflict("Your card has been blocked.");
                 HttpContext.Session.SetInt32("_CardId", card.CardId);
                 return Ok();
             }
-
-            else if (card.IsLoked)
-                return Conflict("Your card has been blocked.");
             return NoContent();
         }
 
